@@ -1,7 +1,10 @@
 # You Don't Know JS: Scope & Closures
 # Chapter 1: What is Scope?
+# 章节1 什么是作用域？
 
 One of the most fundamental paradigms of nearly all programming languages is the ability to store values in variables, and later retrieve or modify those values. In fact, the ability to store values and pull values out of variables is what gives a program *state*.
+
+在几乎所有的编程语言中,最基础的能力之一就是将数据存储到变量中,并通过变量取出或者修改存入的数据.事实上,从变量中存放和取出数据的能力是程序给出的状态.
 
 Without such a concept, a program could perform some tasks, but they would be extremely limited and not terribly interesting.
 
@@ -78,6 +81,8 @@ A reasonable assumption would be that *Compiler* will produce code that could be
 If *Engine* eventually finds a variable, it assigns the value `2` to it. If not, *Engine* will raise its hand and yell out an error!
 
 To summarize: two distinct actions are taken for a variable assignment: First, *Compiler* declares a variable (if not previously declared in the current scope), and second, when executing, *Engine* looks up the variable in *Scope* and assigns to it, if found.
+
+以`var a = 2;`这句来说明,这个语句看起来像是一个命令,但实际上引擎看起来是两个命令,首先`1`引擎会去命令作用域查找有没有a这个名称的变量,如果作用域找到了则直接跳过,如果没有在作用域中发现a则会创建一个变量叫a,加入到作用域中.`2`引擎会命令作用域查找变量a,这里会涉及到作用域嵌套的查找,如果找到了a变量,则将2赋值给它,如果最终没有找到变量a,则会报错。
 
 ### Compiler Speak
 
